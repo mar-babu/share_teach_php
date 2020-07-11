@@ -17,6 +17,10 @@ if (isset($_POST['submit'])){
     }
 }
 
+
+/* get data from age table */
+$sql = "SELECT * FROM age";
+$query = mysqli_query($mysqli, $sql);
 ?>
 
 
@@ -38,9 +42,9 @@ if (isset($_POST['submit'])){
                             <div class="col-lg-10">
                                 <select class="form-control" name="age">
                                     <option value="">Select your age</option>
-                                    <option value="18">18</option>
-                                    <option value="20">20</option>
-                                    <option value="22">22</option>
+                                    <?php while ($data = mysqli_fetch_array($query)) { ?>
+                                    <option value="<?php echo $data['id'] ?>"><?php echo $data['age'] ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>

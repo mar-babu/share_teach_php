@@ -27,6 +27,7 @@ $query = mysqli_query($mysqli,$sql);
                             <th>EMAIL</th>
                             <th>Age</th>
                             <th>Address</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -36,6 +37,10 @@ $query = mysqli_query($mysqli,$sql);
                             <td><?php echo $data['email']; ?></td>
                             <td><?php echo $data['age']; ?></td>
                             <td><?php echo $data['address']; ?></td>
+                            <td><a href="delete.php?id=<?php echo $data['id']; ?>" class="btn btn-danger btn-sm">
+                                    <span>Delete</span>
+                                </a>
+                            </td>
                         </tr>
                         <?php } ?>
                         </tbody>
