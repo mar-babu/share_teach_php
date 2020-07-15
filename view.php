@@ -37,7 +37,10 @@ $query = mysqli_query($mysqli,$sql);
                             <td><?php echo $data['email']; ?></td>
                             <td><?php echo $data['age']; ?></td>
                             <td><?php echo $data['address']; ?></td>
-                            <td><a href="delete.php?id=<?php echo $data['id']; ?>" class="btn btn-danger btn-sm">
+                            <td><a href="edit.php?id=<?php echo $data['id']; ?>" class="btn btn-primary btn-sm">
+                                    <span>Edit</span>
+                                </a>
+                                <a href="delete.php?id=<?php echo $data['id']; ?>" class="btn btn-danger btn-sm">
                                     <span>Delete</span>
                                 </a>
                             </td>
